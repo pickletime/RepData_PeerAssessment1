@@ -32,14 +32,14 @@ The mean daily step count is 1.076618910^{4} and the daily median is
 
     hist(daily_sum$steps, main = "Total Steps Each Day", xlab = "Number of Steps", ylab = "Frequency", col = "orange")
 
-![](PA1_template_files/figure-markdown_strict/daily%202-1.png)
+![](PA1_template_files/figure-markdown_strict/daily_2-1.png)
 
     interval_average <- aggregate(steps ~ interval, data, mean)
     plot(x = interval_average$interval, y = interval_average$steps, xlab = "Interval"
          , ylab = "Average number of steps", main = "Average Daily Number of Steps by Interval", 
          type = "l")
 
-![](PA1_template_files/figure-markdown_strict/daily%20pattern%201-1.png)
+![](PA1_template_files/figure-markdown_strict/daily_pattern_1-1.png)
 
     fiveminmax <- max(interval_average$steps)
     maxinterval <- interval_average[interval_average$steps==fiveminmax,1]
@@ -68,7 +68,7 @@ the entire sampling period.
     missingno_median <- median(missingno_sum$steps)
     hist(missingno_sum$steps, main = "Total Steps Each Day Including Missing Values",xlab = "Number of Steps", ylab = "Frequency", col = "orange")
 
-![](PA1_template_files/figure-markdown_strict/missingno%204-1.png)
+![](PA1_template_files/figure-markdown_strict/missingno_4-1.png)
 
     complete_sum <- sum(missingno_sum$steps) 
     cleaned_sum <- sum(daily_sum$steps)
@@ -94,7 +94,7 @@ weekday vs weekend?
     with(final_dataset_table, xyplot(steps ~ interval|daytype, main = "Average Steps per Day by Interval for Weekend vs Weekdays", xlab = "Interval", ylab = "Steps", 
                                      layout = c(1, 2),type = "l"))
 
-![](PA1_template_files/figure-markdown_strict/week%202-1.png)
+![](PA1_template_files/figure-markdown_strict/week_2-1.png)
 
     ""
 
